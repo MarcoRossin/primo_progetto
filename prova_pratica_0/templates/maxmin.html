@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | somma{% endblock title %} 
+
+{% block content %}
+<h1>Somma</h1>
+{% if  n1 < n2 %}
+<font color="red">{{ n1 }}</font>
+<p>+</p>
+<font color="green">{{ n2 }}</font>
+{% elif n1 > n2 %}
+<font color="red">{{ n2 }}</font>
+<p>+</p>
+<font color="green">{{ n1 }}</font>
+{% else %}
+<font color="black">{{ n1 }}</font>
+<p>+</p>
+<font color="black">{{ n2 }}</font>
+{% endif %}
+<p>=</p>
+<p>{{ s }}</p>
+
+{% endblock content %}

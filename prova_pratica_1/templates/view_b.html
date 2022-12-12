@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | lista studenti{% endblock title %} 
+
+{% block content %}
+<h1>lista studenti</h1>
+
+<table>
+    {% for key, value in studenti.items %}
+        <tr>
+            <td> {{ key }}: </td> 
+        </tr>
+        {% for v in value %}
+        <tr>
+            <td>{{ v }} </td>
+        </tr>
+        {% endfor %}
+    {% endfor %}
+    </table>
+
+{% endblock content %}

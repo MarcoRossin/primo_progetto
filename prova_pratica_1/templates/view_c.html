@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | media{% endblock title %} 
+
+{% block content %}
+<h1>Media</h1>
+
+<table>
+    {% for key, value in voti.items %}
+        <tr>
+            <td> {{ key }}: </td> 
+        </tr>
+        {% for v in value %}
+            <tr>
+                <td>{{ v }} </td>
+            </tr>
+        {% endfor %}
+        
+    {% endfor %}
+    </table>
+
+{% endblock content %}

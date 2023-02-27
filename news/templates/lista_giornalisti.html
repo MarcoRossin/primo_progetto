@@ -5,8 +5,9 @@
 
 {% block content %}
     <h4>giornalisti:</h4>
+
     {% for giornalista in giornalisti %}
-    <p><strong>Nome: </strong>{{ giornalista.nome }}</p>
+    <p><strong>Nome:</strong> <a href="/news/giornalisti/{{giornalista.id}}">{{ giornalista.nome }}</a></p>
     <p><strong>Cognome: </strong>{{ giornalista.cognome }}</p>
     <hr>
     {% endfor %}

@@ -43,14 +43,14 @@ class GiornalistaListView(ListView):
         return context
 
 def giornalisti_list_api(request):
-    giornalisti=Giornalista.ojects.all()
+    giornalisti=Giornalista.objects.all()
     data={'giornalisti':list(giornalisti.values("pk","nome","cognome"))}
     response=JsonResponse(data)
     return response
 
-def giornalista_api(request,ok):
+def giornalista_api(request,pk):
     try:
-        giornalista=Giornalista.ojects.get(pk=pk)
+        giornalista=Giornalista.objects.get(pk=pk)
         data={'giornalista':{
             "nome":giornalista.nome,
             "cognome":giornalista.cognome,
@@ -67,14 +67,14 @@ def giornalista_api(request,ok):
     return response
 
 def articoli_list_api(request):
-    articoli=Articolo.ojects.all()
+    articoli=Articolo.objects.all()
     data={'articoli':list(articoli.values("titolo","contenuto","giornalista"))}
     response=JsonResponse(data)
     return response
 
-def articolo_api(request,ok):
+def articolo_api(request,pk):
     try:
-        articolo=Articolo.ojects.get(pk=pk)
+        articolo=Articolo.objects.get(pk=pk)
         data={'articolo':{
             "titolo":articolo.nome,
             "giornalista":articolo.cognome,

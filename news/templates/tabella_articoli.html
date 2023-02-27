@@ -9,6 +9,7 @@ Tabella Articoli
 <script>
     const url="https://marcorossin.eu.pythonanywhere.com/news/articoli_list_api";
 
+
     (async function(){
         const response= await fetch(url);
         const result= await response.json();
@@ -19,14 +20,14 @@ Tabella Articoli
         for (const data in result){
             for (let i=0; i<result[data].length; i++){
                 tabella += "<tr>";
-                tabella += `<td>${result[data].[i].titolo}</td>`;
-                tabella += `<td>${result[data].[i].contenuto}</td>`;
+                tabella += `<td>${result[data][i].titolo}</td>`;
+                tabella += `<td>${result[data][i].contenuto}</td>`;
                 tabella += "</tr>";
             }
         }
         tabella +="</table>";
 
         document.body.innerHTML += tabella;
-    })
+    })();
 </script>
 {% endblock script %}
